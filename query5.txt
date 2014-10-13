@@ -1,0 +1,6 @@
+SELECT Reviewer.name, Movie.title, Rating.stars,Rating.ratingDate
+FROM Movie,Reviewer,Rating
+WHERE
+Movie.mID = Rating.mID AND Reviewer.rID = Rating.rID
+ORDER BY
+Reviewer.name,Movie.title,Rating.stars;

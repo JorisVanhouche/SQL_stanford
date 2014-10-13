@@ -1,3 +1,5 @@
-SELECT *
+SELECT title
 FROM
-Movie;
+Movie
+WHERE
+director = 'Steven Spielberg';

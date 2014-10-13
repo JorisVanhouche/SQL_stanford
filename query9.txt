@@ -1,0 +1,23 @@
+
+SELECT
+(SELECT avg(avgRating) AS avgBefore
+FROM
+(SELECT Movie.mID AS mID, Movie.year AS year, avg(Rating.stars) AS avgRating
+FROM Movie,Rating
+WHERE Movie.mID=Rating.mID
+GROUP BY
+Movie.mID) AS permovie
+WHERE
+perMovie.year<1980)
+-
+(SELECT avg(avgRating) AS avgBefore
+FROM
+(SELECT Movie.mID AS mID, Movie.year AS year, avg(Rating.stars) AS avgRating
+FROM Movie,Rating
+WHERE Movie.mID=Rating.mID
+GROUP BY
+Movie.mID) AS permovie
+WHERE
+perMovie.year>1980)
+
+;

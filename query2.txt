@@ -1,0 +1,6 @@
+SELECT distinct(Movie.year)
+FROM Movie,Rating
+WHERE
+Movie.mID=Rating.mID AND (Rating.stars = 4 OR Rating.stars = 5)
+ORDER BY
+Movie.Year; 

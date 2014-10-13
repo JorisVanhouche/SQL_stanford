@@ -1,0 +1,9 @@
+SELECT Movie.title, max(Rating.stars)
+FROM Movie, Rating
+WHERE
+Movie.mID=Rating.mID
+GROUP BY
+Movie.mID
+ORDER BY
+Movie.title;
+

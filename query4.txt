@@ -1,0 +1,6 @@
+SELECT distinct(Reviewer.name)
+FROM
+Reviewer,Rating
+WHERE
+Reviewer.rID=Rating.rID AND Rating.rID in
+(SELECT rID FROM Rating WHERE ratingDate is null);
